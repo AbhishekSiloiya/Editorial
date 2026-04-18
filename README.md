@@ -11,6 +11,7 @@ Static publication site for `Editorial`, designed to be served directly from Git
 
 ## Current pages
 
+- Live site: `https://abhisheksiloiya.github.io/Editorial/`
 - Homepage: `/`
 - First essay: `/essays/thirty-minutes-of-truth.html`
 
