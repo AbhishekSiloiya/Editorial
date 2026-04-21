@@ -275,10 +275,10 @@ body{
 .si-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.25) saturate(.3) mix-blend-mode:multiply;z-index:0;}
 .si-body{position:relative;z-index:1;display:flex;align-items:center;gap:64px;max-width:1200px;margin:0 auto;width:100%;}
 .si-big{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(70px,12vw,150px);line-height:.85;color:#FAF7F0;letter-spacing:-3px;flex-shrink:0;}
-.si-txt{flex:1;}
+.si-txt{flex:1;max-width:720px;padding:22px 26px;background:rgba(14,30,22,.52);border:1px solid rgba(250,247,240,.12);backdrop-filter:blur(3px);}
 .si-stat-label{font-family:'Raleway',sans-serif;font-size:8px;letter-spacing:5px;text-transform:uppercase;color:rgba(250,247,240,.6);margin-bottom:12px;}
-.si-claim{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(22px,3vw,40px);line-height:1.3;color:#FAF7F0;}
-.si-source{font-family:'EB Garamond',serif;font-style:italic;font-size:14px;color:rgba(250,247,240,.68);margin-top:12px;}
+.si-claim{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(22px,3vw,40px);line-height:1.3;color:#FAF7F0;}
+.si-source{font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:rgba(250,247,240,.88);margin-top:12px;}
 
 /* ─── FULL-BLEED IMAGE BREAK ─── */
 .img-break{
@@ -331,7 +331,6 @@ body{
 
 /* ─── SEQUENCE ─── */
 .sequence{background:var(--forest);padding:80px 68px;}
-.seq-in{max-width:1200px;margin:0 auto;}
 .seq-k{font-family:'Raleway',sans-serif;font-size:8px;letter-spacing:5px;text-transform:uppercase;color:rgba(250,247,240,.4);margin-bottom:14px;display:flex;align-items:center;gap:14px;}
 .seq-k::before{content:'';display:block;width:36px;height:1px;background:rgba(250,247,240,.3);}
 .seq-h{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(26px,3.2vw,46px);line-height:1.2;color:#FAF7F0;letter-spacing:-.5px;margin-bottom:52px;}
@@ -374,7 +373,6 @@ body{
 .cl-q em{font-style:normal;color:var(--amber-l);}
 .cl-attr{font-family:'Raleway',sans-serif;font-size:8.5px;letter-spacing:4.5px;text-transform:uppercase;color:var(--amber);opacity:.6;display:flex;align-items:center;justify-content:center;gap:16px;}
 .cl-attr::before,.cl-attr::after{content:'';display:block;width:32px;height:1px;background:var(--amber);opacity:.3;}
-.cl-sub{font-family:'EB Garamond',serif;font-style:italic;font-size:16px;line-height:1.72;color:rgba(250,247,240,.64);max-width:580px;margin:44px auto 0;}
 
 /* ─── FOOTER ─── */
 .end{background:var(--forest-d);display:flex;justify-content:center;align-items:center;gap:18px;padding:28px 68px 16px;border-top:1px solid rgba(212,147,58,.07);}
@@ -398,6 +396,7 @@ body{
   .t-side{position:static;}
   .op-grid{grid-template-columns:1fr 1fr;}
   .si-body{flex-direction:column;gap:20px;align-items:flex-start;}
+  .si-txt{max-width:none;width:100%;}
   .foot{flex-direction:column;gap:8px;text-align:center;}
   .stat-inter{padding-left:28px;padding-right:28px;}
 }
@@ -1005,41 +1004,6 @@ body{
 </section>
 
 <!-- ══════ PUBLISHING SEQUENCE ══════ -->
-<section class="sequence">
-  <div class="seq-in">
-    <div class="seq-k">Publishing Roadmap</div>
-    <h2 class="seq-h">Recommended Publishing Sequence</h2>
-    <div class="seq-phases">
-      <div class="sp ph1">
-        <div class="sp-lbl">Phase One</div>
-        <div class="sp-n">I</div>
-        <div class="sp-ti">Reach &amp; Relevance</div>
-        <ul class="sp-ul">
-          <li>Theme 4 — Social is a strategic pillar</li>
-          <li>Theme 1 — Lazy premium will lose</li>
-        </ul>
-      </div>
-      <div class="sp ph2">
-        <div class="sp-lbl">Phase Two</div>
-        <div class="sp-n">II</div>
-        <div class="sp-ti">Authority &amp; Operating Model</div>
-        <ul class="sp-ul">
-          <li>Theme 2 — Not more digital, better design</li>
-          <li>Theme 3 — Product, loyalty, AI together</li>
-        </ul>
-      </div>
-      <div class="sp ph3">
-        <div class="sp-lbl">Phase Three</div>
-        <div class="sp-n">III</div>
-        <div class="sp-ti">Signature Thought Leadership</div>
-        <ul class="sp-ul">
-          <li>Theme 5 — AI, but trust still decides</li>
-          <li>Theme 6 — Connect brand, commerce, trust</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ══════ CLOSING ══════ -->
 <section class="closing">
@@ -1049,7 +1013,6 @@ body{
     <div class="cl-k">Closing Line</div>
     <p class="cl-q">Travel brands do not have<br>an inspiration problem.<br>They have a <em>conversion architecture problem.</em></p>
     <div class="cl-attr">Abhishek Siloiya · Bhuzen Advisory · London</div>
-    <p class="cl-sub">The opportunity here is bigger than a few posts. This is the beginning of a serious content and thought-leadership platform around the future of travel, hospitality, digital commerce, premium experience, and AI-enabled decisioning. And that is exactly the kind of space where this voice can stand out.</p>
   </div>
 </section>
 
