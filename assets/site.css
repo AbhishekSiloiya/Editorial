@@ -107,8 +107,8 @@ a {
   min-height: 760px;
   margin-bottom: 28px;
   background:
-    linear-gradient(125deg, rgba(8, 7, 5, 0.84), rgba(18, 13, 10, 0.68)),
-    url("https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=80") center/cover;
+    linear-gradient(125deg, rgba(8, 7, 5, 0.86), rgba(18, 13, 10, 0.74)),
+    url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=80") center/cover;
 }
 
 .cover-backdrop {
@@ -368,7 +368,7 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: saturate(0.92) contrast(1.02);
+  filter: saturate(0.72) contrast(1.02) brightness(0.9);
 }
 
 .host-copy {
