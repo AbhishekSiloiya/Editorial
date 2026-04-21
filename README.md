@@ -13,6 +13,7 @@ Static publication site for `Editorial`, designed to be served directly from Git
 
 - Live site: `https://abhisheksiloiya.github.io/Editorial/`
 - Homepage: `/`
+- Travel essay: `/essays/the-future-of-travel-2026.html`
 - First essay: `/essays/thirty-minutes-of-truth.html`
 
 ## Add a new essay
