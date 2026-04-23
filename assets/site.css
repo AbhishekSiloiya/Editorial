@@ -78,8 +78,9 @@ a {
 
 .topbar-brand {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2rem, 3vw, 3.2rem);
-  line-height: 0.95;
+  font-size: clamp(1.1rem, 1.9vw, 2rem);
+  line-height: 1.05;
+  max-width: 720px;
 }
 
 .topbar-nav {
@@ -91,6 +92,7 @@ a {
 .topbar-nav a {
   color: var(--stone-2);
   font-weight: 600;
+  scroll-margin-top: 120px;
 }
 
 .cover,
@@ -108,7 +110,7 @@ a {
   margin-bottom: 28px;
   background:
     linear-gradient(125deg, rgba(8, 7, 5, 0.86), rgba(18, 13, 10, 0.74)),
-    url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=80") center/cover;
+    url("https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1800&q=80") center/cover;
 }
 
 .cover-backdrop {
@@ -307,6 +309,7 @@ a {
 
 .archive {
   margin-bottom: 28px;
+  scroll-margin-top: 120px;
 }
 
 .archive-heading {
@@ -315,6 +318,11 @@ a {
   justify-content: space-between;
   gap: 22px;
   margin-bottom: 18px;
+}
+
+.archive-heading h2 {
+  max-width: none;
+  white-space: nowrap;
 }
 
 .archive-carousel {
@@ -378,6 +386,7 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 34px;
+  scroll-margin-top: 120px;
 }
 
 .host-section {
@@ -388,6 +397,7 @@ a {
   padding: clamp(28px, 5vw, 54px);
   background:
     linear-gradient(90deg, rgba(11, 9, 7, 0.96), rgba(18, 14, 11, 0.94));
+  scroll-margin-top: 120px;
 }
 
 .host-portrait-frame {
@@ -471,6 +481,10 @@ a {
     flex-direction: column;
   }
 
+  .topbar-brand {
+    max-width: none;
+  }
+
   .cover-grid {
     padding: 22px;
     gap: 18px;
@@ -497,6 +511,10 @@ a {
 
   .archive-heading {
     display: block;
+  }
+
+  .archive-heading h2 {
+    white-space: normal;
   }
 
   .archive-carousel {
