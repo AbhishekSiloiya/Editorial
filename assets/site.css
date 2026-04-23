@@ -42,21 +42,21 @@ a {
 .site-frame {
   width: min(1260px, calc(100% - 36px));
   margin: 0 auto;
-  padding: 22px 0 64px;
+  padding: 14px 0 64px;
 }
 
 .topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 18px 22px;
-  margin-bottom: 28px;
+  gap: 18px;
+  padding: 12px 18px;
+  margin-bottom: 14px;
   border: 1px solid var(--line);
   background: rgba(13, 10, 8, 0.62);
   backdrop-filter: blur(18px);
   position: sticky;
-  top: 16px;
+  top: 10px;
   z-index: 10;
 }
 
@@ -78,20 +78,21 @@ a {
 
 .topbar-brand {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.1rem, 1.9vw, 2rem);
-  line-height: 1.05;
-  max-width: 720px;
+  font-size: clamp(1rem, 1.65vw, 1.7rem);
+  line-height: 1;
+  max-width: 680px;
 }
 
 .topbar-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 14px;
 }
 
 .topbar-nav a {
   color: var(--stone-2);
   font-weight: 600;
+  font-size: 0.94rem;
   scroll-margin-top: 120px;
 }
 
