@@ -104,7 +104,7 @@ a {
 }
 
 .cover {
-  min-height: 760px;
+  min-height: 620px;
   margin-bottom: 28px;
   background:
     linear-gradient(125deg, rgba(8, 7, 5, 0.86), rgba(18, 13, 10, 0.74)),
@@ -122,12 +122,12 @@ a {
 .cover-grid {
   position: relative;
   z-index: 1;
-  min-height: 760px;
+  min-height: 620px;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.78fr);
   gap: 26px;
-  align-items: end;
-  padding: clamp(30px, 5vw, 58px);
+  align-items: center;
+  padding: clamp(26px, 4vw, 46px);
 }
 
 .cover-copy {
@@ -149,13 +149,13 @@ a {
 
 .cover-copy h1 {
   margin-top: 18px;
-  font-size: clamp(4rem, 9vw, 8rem);
-  max-width: 11ch;
+  font-size: clamp(3.6rem, 7vw, 6.6rem);
+  max-width: 12ch;
 }
 
 .cover-lede {
-  margin: 26px 0 0;
-  max-width: 54ch;
+  margin: 20px 0 0;
+  max-width: 50ch;
   font-size: 1.08rem;
   color: rgba(242, 232, 216, 0.84);
 }
@@ -164,7 +164,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 34px;
+  margin-top: 26px;
 }
 
 .button {
@@ -190,12 +190,13 @@ a {
 }
 
 .cover-panel {
-  align-self: stretch;
+  align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   gap: 18px;
-  padding: 28px;
+  min-height: 420px;
+  padding: 26px;
   background: linear-gradient(180deg, rgba(18, 13, 10, 0.34), rgba(18, 13, 10, 0.86));
   border: 1px solid rgba(242, 232, 216, 0.14);
 }
@@ -309,39 +310,68 @@ a {
 }
 
 .archive-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 22px;
   margin-bottom: 18px;
 }
 
-.archive-list {
+.archive-carousel {
   display: grid;
-  gap: 16px;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(360px, 1fr);
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+  scrollbar-color: rgba(184, 138, 74, 0.5) rgba(255, 255, 255, 0.05);
 }
 
-.archive-entry {
-  display: grid;
-  grid-template-columns: 80px minmax(0, 1fr);
-  gap: 22px;
-  padding: 28px;
+.archive-card {
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 26px;
   border: 1px solid var(--line);
   background: rgba(17, 13, 10, 0.82);
   box-shadow: var(--shadow);
+  scroll-snap-align: start;
 }
 
-.archive-entry-featured {
+.archive-card-featured {
   background:
     linear-gradient(120deg, rgba(42, 30, 20, 0.92), rgba(18, 14, 11, 0.9));
+}
+
+.archive-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
 }
 
 .archive-count {
   color: rgba(184, 138, 74, 0.28);
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3rem, 7vw, 5.4rem);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
   line-height: 0.85;
 }
 
-.archive-content h3 {
+.archive-card h3 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
   margin-top: 10px;
   font-size: clamp(2rem, 3vw, 3.2rem);
+}
+
+.archive-card p {
+  margin: 0;
+  color: rgba(215, 198, 174, 0.84);
 }
 
 .salon-note {
@@ -352,27 +382,36 @@ a {
 
 .host-section {
   display: grid;
-  grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1.15fr);
-  gap: 0;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+  padding: clamp(28px, 5vw, 54px);
   background:
     linear-gradient(90deg, rgba(11, 9, 7, 0.96), rgba(18, 14, 11, 0.94));
 }
 
-.host-portrait-wrap {
-  min-height: 680px;
-  border-right: 1px solid var(--line);
+.host-portrait-frame {
+  width: min(300px, 72vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 8px;
+  border: 1px solid rgba(212, 180, 131, 0.46);
+  background:
+    radial-gradient(circle at 30% 20%, rgba(212, 180, 131, 0.22), transparent 34%),
+    rgba(255, 255, 255, 0.03);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38);
 }
 
 .host-portrait {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   object-fit: cover;
   display: block;
   filter: saturate(0.72) contrast(1.02) brightness(0.9);
 }
 
 .host-copy {
-  padding: clamp(30px, 5vw, 54px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -408,10 +447,8 @@ a {
     min-height: auto;
   }
 
-  .host-portrait-wrap {
-    min-height: 520px;
-    border-right: none;
-    border-bottom: 1px solid var(--line);
+  .host-portrait-frame {
+    justify-self: center;
   }
 }
 
@@ -424,7 +461,6 @@ a {
   .topbar,
   .curated-feature,
   .salon-note,
-  .archive-entry,
   .host-copy,
   .cover-panel {
     padding: 22px;
@@ -437,11 +473,12 @@ a {
 
   .cover-grid {
     padding: 22px;
+    gap: 18px;
   }
 
   .cover-copy h1 {
     max-width: none;
-    font-size: clamp(3rem, 16vw, 4.8rem);
+    font-size: clamp(2.8rem, 13vw, 4rem);
   }
 
   .cover-actions {
@@ -450,8 +487,20 @@ a {
   }
 
   .cover-meta,
-  .archive-entry {
+  .archive-card {
     grid-template-columns: 1fr;
+  }
+
+  .cover-panel {
+    min-height: auto;
+  }
+
+  .archive-heading {
+    display: block;
+  }
+
+  .archive-carousel {
+    grid-auto-columns: minmax(260px, 86vw);
   }
 
   .archive-count {
