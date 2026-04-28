@@ -426,13 +426,14 @@ a {
 }
 
 .archive-card:hover,
-.archive-card:focus-within {
+.archive-card:focus-visible {
   transform: translateY(-3px);
   border-color: rgba(212, 180, 131, 0.34);
+  outline: none;
 }
 
 .archive-card:hover::before,
-.archive-card:focus-within::before {
+.archive-card:focus-visible::before {
   opacity: 1;
 }
 
