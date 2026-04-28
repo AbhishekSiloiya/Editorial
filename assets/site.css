@@ -42,7 +42,7 @@ a {
 .site-frame {
   width: min(1260px, calc(100% - 36px));
   margin: 0 auto;
-  padding: 14px 0 64px;
+  padding: 10px 0 64px;
 }
 
 .topbar {
@@ -50,8 +50,8 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  padding: 12px 18px;
-  margin-bottom: 14px;
+  padding: 10px 18px;
+  margin-bottom: 10px;
   border: 1px solid var(--line);
   background: rgba(13, 10, 8, 0.62);
   backdrop-filter: blur(18px);
@@ -107,8 +107,8 @@ a {
 }
 
 .cover {
-  min-height: 620px;
-  margin-bottom: 28px;
+  min-height: min(620px, calc(100svh - 116px));
+  margin-bottom: 22px;
   background:
     linear-gradient(125deg, rgba(8, 7, 5, 0.86), rgba(18, 13, 10, 0.74)),
     url("https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1800&q=80") center/cover;
@@ -125,12 +125,12 @@ a {
 .cover-grid {
   position: relative;
   z-index: 1;
-  min-height: 620px;
+  min-height: min(620px, calc(100svh - 116px));
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.78fr);
   gap: 26px;
   align-items: center;
-  padding: clamp(26px, 4vw, 46px);
+  padding: clamp(22px, 3.4vw, 40px);
 }
 
 .cover-copy {
@@ -151,15 +151,15 @@ a {
 }
 
 .cover-copy h1 {
-  margin-top: 18px;
-  font-size: clamp(3.6rem, 7vw, 6.6rem);
-  max-width: 12ch;
+  margin-top: 14px;
+  font-size: clamp(3.2rem, 6.15vw, 5.8rem);
+  max-width: 12.5ch;
 }
 
 .cover-lede {
-  margin: 20px 0 0;
+  margin: 16px 0 0;
   max-width: 50ch;
-  font-size: 1.08rem;
+  font-size: 1.02rem;
   color: rgba(242, 232, 216, 0.84);
 }
 
@@ -167,7 +167,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 26px;
+  margin-top: 22px;
 }
 
 .button {
@@ -197,15 +197,22 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 18px;
-  min-height: 420px;
-  padding: 26px;
-  background: linear-gradient(180deg, rgba(18, 13, 10, 0.34), rgba(18, 13, 10, 0.86));
+  gap: 16px;
+  min-height: 360px;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(184, 138, 74, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(18, 13, 10, 0.46), rgba(18, 13, 10, 0.9));
   border: 1px solid rgba(242, 232, 216, 0.14);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease,
+    background 180ms ease;
 }
 
 .cover-panel h2 {
-  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-size: clamp(2.15rem, 3.45vw, 3.45rem);
 }
 
 .cover-panel p {
@@ -221,7 +228,7 @@ a {
 }
 
 .cover-meta div {
-  padding-top: 14px;
+  padding-top: 12px;
   border-top: 1px solid rgba(242, 232, 216, 0.12);
 }
 
@@ -253,6 +260,13 @@ a {
   text-underline-offset: 0.24em;
 }
 
+.cover-panel:hover,
+.cover-panel:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(212, 180, 131, 0.42);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+}
+
 .salon-ribbon {
   margin: 0 auto 28px;
   max-width: 980px;
@@ -272,16 +286,39 @@ a {
 
 .curated-feature,
 .salon-note {
+  isolation: isolate;
   margin-bottom: 28px;
-  padding: 36px;
+  padding: clamp(30px, 4vw, 46px);
   background:
-    linear-gradient(180deg, rgba(26, 19, 15, 0.92), rgba(14, 11, 9, 0.94));
+    radial-gradient(circle at 8% 12%, rgba(184, 138, 74, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(27, 20, 15, 0.94), rgba(12, 10, 8, 0.96));
+}
+
+.curated-feature::before,
+.salon-note::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  z-index: -1;
+  border: 1px solid rgba(212, 180, 131, 0.08);
+  pointer-events: none;
+}
+
+.curated-feature::after,
+.salon-note::after {
+  content: "";
+  position: absolute;
+  left: 36px;
+  right: 36px;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 180, 131, 0.38), transparent);
 }
 
 .curated-feature {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 34px;
+  gap: clamp(28px, 5vw, 70px);
 }
 
 .curated-heading h2,
@@ -289,15 +326,16 @@ a {
 .salon-note-heading h2,
 .host-copy h2 {
   margin-top: 14px;
-  font-size: clamp(2.4rem, 4vw, 4.8rem);
-  max-width: 11ch;
+  font-size: clamp(2.35rem, 3.7vw, 4.35rem);
+  max-width: 12ch;
 }
 
 .curated-body,
 .salon-note-body {
   display: grid;
-  gap: 18px;
+  gap: 20px;
   align-content: start;
+  padding-top: 6px;
 }
 
 .curated-body p,
@@ -306,6 +344,13 @@ a {
 .archive-content p {
   margin: 0;
   color: rgba(215, 198, 174, 0.84);
+}
+
+.curated-body p,
+.salon-note-body p {
+  max-width: 64ch;
+  font-size: clamp(1rem, 1.35vw, 1.22rem);
+  line-height: 1.72;
 }
 
 .archive {
@@ -338,6 +383,8 @@ a {
 }
 
 .archive-card {
+  position: relative;
+  overflow: hidden;
   min-height: 270px;
   display: flex;
   flex-direction: column;
@@ -345,14 +392,48 @@ a {
   gap: 18px;
   padding: 26px;
   border: 1px solid var(--line);
-  background: rgba(17, 13, 10, 0.82);
+  background:
+    linear-gradient(180deg, rgba(22, 16, 12, 0.92), rgba(12, 10, 8, 0.94));
   box-shadow: var(--shadow);
   scroll-snap-align: start;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.archive-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(184, 138, 74, 0.1), transparent 42%),
+    radial-gradient(circle at 100% 0%, rgba(212, 180, 131, 0.1), transparent 36%);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.archive-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .archive-card-featured {
   background:
-    linear-gradient(120deg, rgba(42, 30, 20, 0.92), rgba(18, 14, 11, 0.9));
+    radial-gradient(circle at 12% 0%, rgba(184, 138, 74, 0.16), transparent 32%),
+    linear-gradient(120deg, rgba(42, 30, 20, 0.94), rgba(18, 14, 11, 0.92));
+  border-color: rgba(212, 180, 131, 0.24);
+}
+
+.archive-card:hover,
+.archive-card:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(212, 180, 131, 0.34);
+}
+
+.archive-card:hover::before,
+.archive-card:focus-within::before {
+  opacity: 1;
 }
 
 .archive-card-top {
@@ -363,7 +444,7 @@ a {
 }
 
 .archive-count {
-  color: rgba(184, 138, 74, 0.28);
+  color: rgba(184, 138, 74, 0.34);
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(2.8rem, 6vw, 4.8rem);
   line-height: 0.85;
@@ -381,12 +462,13 @@ a {
 .archive-card p {
   margin: 0;
   color: rgba(215, 198, 174, 0.84);
+  max-width: 42ch;
 }
 
 .salon-note {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 34px;
+  gap: clamp(28px, 5vw, 70px);
   scroll-margin-top: 120px;
 }
 

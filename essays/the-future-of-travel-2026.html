@@ -38,7 +38,7 @@ body{
   background:linear-gradient(to bottom,rgba(14,30,22,0.95),transparent);
   pointer-events:none;
 }
-.mast-logo{font-family:'Raleway',sans-serif;font-weight:200;font-size:9px;letter-spacing:6px;text-transform:uppercase;color:#FAF7F0;opacity:.7;}
+.mast-logo{font-family:'Raleway',sans-serif;font-weight:200;font-size:9px;letter-spacing:6px;text-transform:uppercase;color:#FAF7F0;opacity:.7;pointer-events:auto;text-decoration:none;}
 .mast-logo b{font-weight:700;color:var(--amber);}
 .mast-c{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:9px;opacity:.25;}
 .mc-r{width:24px;height:1px;background:var(--amber);}
@@ -431,7 +431,7 @@ body{
 
 <!-- MASTHEAD -->
 <header class="mast">
-  <div class="mast-logo">The Bhuzen <b>Brief</b></div>
+  <a class="mast-logo" href="../" aria-label="Back to The Bhuzen Brief landing page">The Bhuzen <b>Brief</b></a>
   <div class="mast-c"><div class="mc-r"></div><div class="mc-d"></div><div class="mc-r"></div></div>
   <div class="mast-tag">Special Report · Travel &amp; Commerce · 2026</div>
 </header>
