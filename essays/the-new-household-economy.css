@@ -59,6 +59,8 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; 
   font-size: 10px;
   font-weight: 300;
   color: rgba(247, 241, 232, 0.84);
+  pointer-events: auto;
+  text-decoration: none;
 }
 
 .mast-logo span { color: var(--gold-soft); font-weight: 700; }
@@ -541,4 +543,3 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; 
   .article-body p:has(strong):not(:has(a)) { padding: 26px 24px; }
   .feature-card { min-height: auto; padding: 26px; }
 }
-
