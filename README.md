@@ -1,6 +1,6 @@
 # Editorial
 
-Static publication site for `Editorial`, designed to be served directly from GitHub Pages.
+Legacy static publication site for `Editorial`, served directly from GitHub Pages. The current publication is hosted at `https://aabhisheksiloya.com/editorial/`; every legacy page declares its matching current URL as canonical.
 
 ## Structure
 
@@ -31,3 +31,5 @@ This repository is intended to publish from GitHub Pages using:
 - Folder: `/ (root)`
 
 The `.nojekyll` file is included so the site is served as plain static files without Jekyll processing.
+
+Do not remove or change a canonical URL when editing a legacy page. New editorial publishing should happen in the primary website repository.
